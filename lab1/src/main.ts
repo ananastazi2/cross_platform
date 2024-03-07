@@ -7,9 +7,6 @@ import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
 
-// import { AppRoutingModule } from './app/app.routes'; // Importing the module
-// const routes = AppRoutingModule.routes; // Extracting 'routes' from the module
-
 if (environment.production) {
   enableProdMode();
 }
