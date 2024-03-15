@@ -13,6 +13,10 @@ const routes: Routes = [
     path: 'lab3',
     loadComponent: () => import('./lab3/lab3.page').then( m => m.Lab3Page)
   },
+  {
+    path: 'lab4',
+    loadComponent: () => import('./lab4/lab4.page').then( m => m.Lab4Page)
+  },
 
 ];
 
