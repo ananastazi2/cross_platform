@@ -35,9 +35,13 @@
 <ion-content [fullscreen]="true">
   <ion-card>
     <ion-card-header>
-      <ion-title size="medium">Завдання</ion-title>
+      <ion-title size="medium">Завдання 1</ion-title>
       <p>
         Скласти програму з абстрактним батьківським класом і двома об'єктами – нащадками. Реалізувати циклічне виведення параметрів об'єктів, використовуючи  поліморфний контейнер.
+      </p>
+      <ion-title size="medium">Завдання 2</ion-title>
+      <p>
+        Організувати обчислення середньої вартості шаф і середньої вартості диванів.
       </p>
     </ion-card-header>
 
@@ -45,6 +49,9 @@
       <ion-input type="number" value="5" #Inputn></ion-input>
       <ion-button (click)="calculate(Inputn.value)">Обчислити</ion-button>
       <p *ngFor="let item of furniture">{{item.show()}}</p>
+      <p *ngIf="showAverage">Середня вартість шаф: {{averageWardrobePrice}}</p>
+      <p *ngIf="showAverage">Середня вартість диванів: {{averageSofaPrice}}</p>
     </ion-card-content>
+    
   </ion-card>
 </ion-content>

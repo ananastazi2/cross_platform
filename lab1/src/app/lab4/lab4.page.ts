@@ -16,6 +16,9 @@ import { Sofa } from './class/Sofa';
 })
 export class Lab4Page implements OnInit {
   furniture: Furniture[] = [];
+  averageWardrobePrice: number = 0;
+  averageSofaPrice: number = 0;
+  showAverage: boolean = false;
 
   constructor() { }
 
@@ -30,7 +33,7 @@ export class Lab4Page implements OnInit {
     this.furniture = new Array();
     let n = parseInt(nn);
     let numOfW = 1; 
-    let numOfS = 1; 
+    let numOfS = 1;
 
     for (let i = 0; i < n; ++i) {
       if (i % 2 === 0) {
@@ -41,9 +44,27 @@ export class Lab4Page implements OnInit {
       }
     }
 
-    this.furniture.forEach((el) => {
+    let sumWardrobePrice = 0;
+    let sumSofaPrice = 0;
+
+    this.furniture.forEach((el, i) => {
       el.calculatePrice();
+      if (i % 2 === 0) {
+        sumWardrobePrice += el.price;
+      } else {
+        sumSofaPrice += el.price;
+      }
+
       console.log(el.show());
     });
+
+    this.averageWardrobePrice = numOfW > 0 ? this.calculateAverage(sumWardrobePrice, --numOfW) : 0;
+    this.averageSofaPrice = numOfS > 0 ? this.calculateAverage(sumSofaPrice, --numOfS) : 0;
+
+    this.showAverage = true;
+  }
+
+  calculateAverage(sum: number, n: number) {
+    return sum / n;
   }
 }
