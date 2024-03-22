@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { Furniture } from './class/Furniture';
 import { Wardrobe } from './class/Wardrobe';
 import { Sofa } from './class/Sofa';
+import { Table } from './class/Table';
 
 @Component({
   selector: 'app-lab4',
@@ -68,3 +69,6 @@ export class Lab4Page implements OnInit {
     return sum / n;
   }
 }
+
+export { Wardrobe, Sofa, Table };
+

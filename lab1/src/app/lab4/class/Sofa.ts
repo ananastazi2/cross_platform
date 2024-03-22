@@ -6,6 +6,9 @@ export class Sofa extends Furniture {
     constructor(override name: string, S: number)
     {
         super(name);
+
+        if (S <= 0) throw new Error('S <= 0');
+
         this.S = S;
     }
 
